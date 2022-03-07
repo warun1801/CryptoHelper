@@ -6,7 +6,7 @@ def isSquare(n):
     return floor(sqrt(n)) == ceil(sqrt(n))
 
 def jacobi(a, p):
-    if a > 0 and isSquare(a) or isSquare(p):
+    if a > 0 and (a%p!=0) and isSquare(a) or isSquare(p):
         # print("JAC: a or p is a square number")
         return 1
 

@@ -17,7 +17,7 @@ def factorize(n):
 
 def legendre(a, p):
     # if a is a perfect square then legendre(a, p) = 1
-    if a > 0 and math.ceil(math.sqrt(a)) == math.floor(math.sqrt(a)):
+    if a > 0 and (a%p!=0) and math.ceil(math.sqrt(a)) == math.floor(math.sqrt(a)):
         # print(f"a is a square number, so legendre({a}, {p}) = 1")
         return 1
     
