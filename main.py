@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import json
+from fastapi.middleware.cors import CORSMiddleware
 
 from functions.chinese_remainder_theorem import chinese_remainder_theorem
 from functions.miller_rabin import isPrime
@@ -12,6 +13,18 @@ from functions.order_a_m import order_of_mod
 from functions.prime_factors import get_prime_factors
 from functions.primitive_roots import primitive_roots
 from functions.rrsm import rrsm, euler_totient
+
+app = FastAPI()
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 app = FastAPI()
 
