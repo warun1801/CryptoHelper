@@ -3,7 +3,7 @@ import json
 from fastapi.middleware.cors import CORSMiddleware
 
 from functions.chinese_remainder_theorem import chinese_remainder_theorem
-from functions.miller_rabin import isPrime
+from functions.miller_rabin import isPrime, nextPrime
 from functions.elliptic_curve import get_elliptic_curve_points, elliptic_add, fast_elliptic_multiply
 from functions.extended_euclid import extended_euclidean_algo
 from functions.jacobi_symbol import jacobi
@@ -108,3 +108,7 @@ async def euler(n: int):
     ans = euler_totient(n)
     return json.dumps(ans)
 
+@app.get("/nextprime")
+async def nextprime(n: int):
+    ans = nextPrime(n)
+    return json.dumps(ans)

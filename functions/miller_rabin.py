@@ -36,3 +36,9 @@ def isPrime(n):
         return True
 
     return miller_test(n, 5)
+
+def nextPrime(n):
+    i = n+1
+    while not isPrime(i):
+        i+=1
+    return i
